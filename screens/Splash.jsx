@@ -1,4 +1,4 @@
-import { View, Text, Pressable } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { globalStyle } from '../styles/globalStyle';
 import { StyleSheet } from 'react-native';
 
@@ -7,9 +7,9 @@ const Splash = ({ navigation }) => {
     <View style={globalStyle.container}>
       <Text style={style.landingText}>Add</Text>
       <Text style={style.landingText}>Your Todo!</Text>
-      <Pressable style={style.fabButton} color='#616161' onPress={() => navigation.navigate('Home')}>
-        <Text>Get Started</Text>
-      </Pressable>
+      <TouchableOpacity style={style.fabButton} color='#616161' onPress={() => navigation.navigate('Home')}>
+        <Text style={style.buttonText}>Get Started</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -21,7 +21,16 @@ const style = StyleSheet.create({
   fabButton: {
     position: 'relative',
     top: 80,
+    width: 120,
+    height: 40,
+    paddingTop: 8,
+    borderRadius: 12,
     backgroundColor: '#616161',
+  },
+  buttonText: {
+    color: 'white',
+    textAlign: 'center',
+    fontSize: 20,
   },
 });
 

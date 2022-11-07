@@ -12,9 +12,10 @@ const ActionButton = () => {
 const style = StyleSheet.create({
   actionButton: {
     position: 'absolute',
-    paddingTop: 20,
-    paddingBottom: 12,
-    paddingLeft: 12,
+    bottom: 32,
+    right: 22,
+    paddingTop: 12,
+    paddingLeft: 14,
     backgroundColor: '#80cbc4',
     width: 80,
     height: 58,
