@@ -2,11 +2,11 @@ import { View, FlatList, StyleSheet, StatusBar } from 'react-native';
 import { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import { getTodo } from '../api/getTodo';
-import ListItem from './ListItem';
+import ListItem from '../components/ListItem';
 // import ActionSheet from 'react-native-actions-sheet';
 import ActionButton from '../components/ActionButton';
 
-const Home = () => {
+const Home = ({ navigation }) => {
   const [todo, setTodo] = useState([]);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const Home = () => {
       .catch((error) => console.error(error));
   }, []);
 
-  console.log(todo);
+  const toRegister = () => navigation.navigate('Register');
 
   return (
     <View style={style.container}>
@@ -26,7 +26,7 @@ const Home = () => {
         renderItem={ListItem}
         keyExtractor={(item) => item.id}
       />
-      <ActionButton />
+      <ActionButton toRegister={toRegister} />
     </View>
   );
 };

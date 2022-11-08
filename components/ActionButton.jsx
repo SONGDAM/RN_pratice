@@ -1,9 +1,9 @@
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import React from 'react';
 
-const ActionButton = () => {
+const ActionButton = ({ toRegister }) => {
   return (
-    <TouchableOpacity style={style.actionButton} activeOpacity={0.8}>
+    <TouchableOpacity style={style.actionButton} activeOpacity={0.8} onPress={toRegister}>
       <Text style={style.buttonText}>Add</Text>
     </TouchableOpacity>
   );
